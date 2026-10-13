@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAHOR - All Musina Businesses In One Place | www.tahor.co.za</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4f7fb;color:#0a2a6b}
+header{background:#0a6cbe;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-size:32px;font-weight:800;letter-spacing:-1px}
+.logo span{color:#ff7a00}
+.logo small{display:block;font-size:10px;letter-spacing:1.5px;color:#dbeaff;font-weight:600}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:600;font-size:14px}
+nav a:hover{color:#ffcf9e}
+.btn-orange{background:#ff6b00;color:#fff;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;border:none;cursor:pointer}
+.hero{background:linear-gradient(180deg,#dbeaff 0%,#eaf3ff 100%);text-align:center;padding:50px 20px 30px}
+.hero h1{font-size:42px;font-weight:800;color:#0a2a6b;line-height:1.1}
+.hero p{color:#34506e;margin:12px 0 22px;font-size:16px}
+.search-box{max-width:650px;margin:0 auto;background:#fff;display:flex;padding:6px;border-radius:50px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.search-box input{flex:1;border:none;outline:none;padding:14px 18px;font-size:15px;border-radius:50px}
+.search-box button{background:#ff6b00;color:#fff;border:none;padding:13px 26px;border-radius:50px;font-weight:700;cursor:pointer}
+.loc{margin-top:14px;font-size:13px;color:#333;font-weight:600}
+.section{padding:30px 20px;max-width:1100px;margin:0 auto}
+.section h2{text-align:center;font-size:28px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);padding-bottom:16px}
+.card img{width:100%;height:160px;object-fit:cover}
+.card-body{padding:14px}
+.badge{background:#e85d04;color:#fff;padding:4px 8px;border-radius:5px;font-size:11px;font-weight:700;float:right}
+.card h3{font-size:18px;margin:6px 0}
+.card.stars{color:#f5a623;font-size:13px}
+.card p{font-size:13px;color:#555;margin:6px 0}
+.view-btn{display:inline-block;margin-top:8px;color:#0a6cbe;border:1px solid #0a6cbe;padding:6px 12px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600}
+.pricing-bg{background:#ffe8d6;padding:30px 20px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1050px;margin:0 auto}
+.plan{background:#fff;border-radius:14px;padding:22px;border:2px solid #0a6cbe}
+.plan.popular{background:#ff5a00;color:#fff;border-color:#ff5a00;transform:scale(1.03)}
+.plan h3{font-size:20px}
+.plan.price{font-size:36px;font-weight:800;margin:8px 0}
+.plan ul{list-style:none;margin:14px 0;font-size:14px;line-height:1.9}
+.plan ul li:before{content:"✓ ";color:#1a9a4b;font-weight:800}
+.plan.popular ul li:before{color:#fff}
+.choose{display:block;text-align:center;background:#0a6cbe;color:#fff;padding:11px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:10px}
+.plan.popular.choose{background:#fff;color:#ff5a00}
+.cta{background:#0a6cbe;text-align:center;color:#fff;padding:40px 20px}
+.cta h2{font-size:28px}
+.cta p{margin:10px 0 20px}
+footer{background:#0a2a6b;color:#fff;padding:30px 20px;text-align:center;font-size:13px}
+footer a{color:#ffb26b;text-decoration:none}
+.admin{background:#fff;padding:20px;border-radius:12px;margin-top:20px}
+.admin h3{font-size:18px}
+.stats{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.stat{flex:1;min-width:120px;background:#eaf2ff;padding:14px;border-radius:10px;text-align:center}
+.stat b{font-size:22px;display:block}
+@media(max-width:768px){.grid,.pricing-grid{grid-template-columns:1fr}.hero h1{font-size:30px}nav{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">T<span>AHOR</span><small>BUSINESSES MARKETING PLATFORM</small></div>
+  <nav><a href="#">Home</a><a href="#businesses">Businesses</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <a href="#pricing" class="btn-orange">+ Add Your Business in the Pot</a>
+</header>
+
+<div class="hero">
+  <h1>ALL MUSINA BUSINESSES<br>IN ONE PLACE</h1>
+  <p>Discover, connect, and support local businesses in Musina — all in one platform.</p>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for restaurants, shops, services in Musina..." onkeyup="filterBusinesses()">
+    <button onclick="filterBusinesses()">Search</button>
+  </div>
+  <div class="loc">📍 Located in Musina • Limpopo • South Africa • 300+ businesses listed</div>
+</div>
+
+<div class="section" id="businesses">
+  <h2>Featured Businesses</h2>
+  <div class="grid" id="businessGrid">
+    <div class="card business-card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="FEAST">
+      <div class="card-body"><span class="badge">Food • Takeaway</span>
+      <h3>FEAST Burgers & Pap</h3>
+      <div class="stars">★★★★★ 4.6 • Burgers • Pap • Takeaway</div>
+      <p>🕒 Open now • 1.2km away<br>Known for loaded burgers, pap & gravy, shisanyama meals</p>
+      <a href="https://wa.me/27600000000?text=Hi%20FEAST" class="view-btn">View Details →</a>
+      <a href="https://wa.me/27600000000" class="view-btn" style="border-color:#25D366;color:#25D366">WhatsApp</a>
+      </div>
+    </div>
+    <div class="card business-card">
+      <img src="https://images.unsplash.com/photo-1545262810-77515b6ee1d5?w=600&q=80" alt="Truck Stop">
+      <div class="card-body"><span class="badge">24/7 • Fuel • Stop</span>
+      <h3>Middle Orange Truck Stop</h3>
+      <div class="stars">★★★★☆ 4.4 • Fuel • Food • Rest Stop • 24/7</div>
+      <p>🕒 Open now • 3.5km away<br>Truck stop, coffee, meals, convenience store & rest area</p>
+      <a href="#" class="view-btn">View Details →</a>
+      <a href="https://wa.me/27600000000" class="view-btn" style="border-color:#25D366;color:#25D366">WhatsApp</a>
+      </div>
+    </div>
+    <div class="card business-card">
+      <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80" alt="Ele's">
+      <div class="card-body"><span class="badge">Fast Food</span>
+      <h3>Ele's Fast Food Restaurant</h3>
+      <div class="stars">★★★★★ 4.5 • Fast Food • Chicken • Chips</div>
+      <p>🕒 Open now • 0.8km away<br>Spaghetti & Meatballs, Steak & Boerewors, Breakfast Plates - The Greatest Taste You Have Ever Imagined</p>
+      <a href="#" class="view-btn">View Details →</a>
+      <a href="https://wa.me/27600000000" class="view-btn" style="border-color:#25D366;color:#25D366">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin">
+    <h3>📊 TAHOR Admin Quick View</h3>
+    <div class="stats">
+      <div class="stat">Total Businesses<b>312</b>+12% this month</div>
+      <div class="stat">New Signups<b>42</b>this month</div>
+      <div class="stat">Revenue<b>R24,680</b>+15.2%</div>
+      <div class="stat">Total Views<b>18,540</b>+22%</div>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-bg" id="pricing">
+  <h2 style="text-align:center;font-size:28px">Pricing Plans</h2>
+  <p style="text-align:center;margin:8px 0 22px">Choose the plan that grows your business locally</p>
+  <div class="pricing-grid">
+    <div class="plan"><h3>Standard</h3><div class="price">R60 <span style="font-size:15px">/month</span></div><ul><li>Business Profile Listing</li><li>Directory Visibility</li><li>Up to 5 Photos</li><li>Basic Support</li></ul><a href="https://wa.me/27600000000?text=I%20want%20Standard%20R60%20on%20TAHOR" class="choose">Choose Standard</a></div>
+    <div class="plan popular"><h3>Featured ⭐ Most Popular</h3><div class="price">R100 <span style="font-size:15px">/month</span></div><ul><li>Highlighted on Homepage</li><li>Priority Listing</li><li>Social Media Feature</li><li>Analytics Dashboard</li><li>Up to 15 Photos</li></ul><a href="https://wa.me/27600000000?text=I%20want%20Featured%20R100%20on%20TAHOR" class="choose">Get Featured</a></div>
+    <div class="plan"><h3>Bus Sponsor</h3><div class="price">R140 <span style="font-size:15px">/month</span></div><ul><li>Branded Bus Ad Sponsorship</li><li>Top Banner Placement</li><li>Premium Support</li><li>Custom Campaign Assistance</li></ul><a href="https://wa.me/27600000000?text=I%20want%20Bus%20Sponsor%20R140%20on%20TAHOR" class="choose">Become Sponsor</a></div>
+  </div>
+</div>
+
+<div class="cta" id="contact">
+  <h2>Ready to grow your business?</h2>
+  <p>Join hundreds of Musina businesses growing their reach with TAHOR.</p>
+  <a href="https://wa.me/27600000000?text=Hi%20TAHOR,%20I%20want%20to%20add%20my%20business" class="btn-orange" style="font-size:16px;padding:14px 28px">+ Add Your Business in the Pot →</a>
+  <p style="margin-top:16px;font-size:14px">Scan to Join: <b>www.tahor.co.za</b> | Email: info@tahor.co.za</p>
+</div>
+
+<footer>
+  <b style="font-size:18px">T<span style="color:#ff7a00">AHOR</span></b> - Connecting Musina businesses and customers since 2024.<br>
+  info@tahor.co.za • 015 534 1234 • Musina, Limpopo<br>
+  <a href="#">Businesses</a> • <a href="#">Pricing</a> • <a href="#">About Us</a> • <a href="#">Support</a><br><br>
+  © 2024 TAHOR Businesses Marketing Platform • www.tahor.co.za • Privacy Policy • Terms of Service • All Rights Reserved
+</footer>
+
+<script>
+function filterBusinesses(){
+  let input = document.getElementById('searchInput').value.toLowerCase();
+  let cards = document.getElementsByClassName('business-card');
+  for(let i=0;i<cards.length;i++){
+    let txt = cards[i].innerText.toLowerCase();
+    cards[i].style.display = txt.includes(input)? '' : 'none';
+  }
+}
+</script>
+</body>
+</html>
